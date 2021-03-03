@@ -16,7 +16,7 @@ def get_word_list():
 def create_url(word):
     # 検索ワードに登録されているワードの書籍情報を検索
     API = "https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404"
-    APPLICATION_ID = "1037700403670240218"
+    APPLICATION_ID = "楽天APIをここに記入"
 
     values = {
         "applicationId": APPLICATION_ID,
@@ -31,7 +31,7 @@ def create_url(word):
 
 
 def lineNotify(message):
-    line_notify_token = ''
+    line_notify_token = 'LINEnotifyのAPIをここに記入'
     line_notify_api = 'https://notify-api.line.me/api/notify'
     payload = {'message': message}
     headers = {'Authorization': 'Bearer ' + line_notify_token}

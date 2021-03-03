@@ -63,8 +63,8 @@ class WordDeleteView(DeleteView):
     success_url = reverse_lazy('isbn:delete_done')
 
 
-def delete_done(request):
-    return render(request, 'isbn/delete_done.html')
+    def delete_done(request):
+        return render(request, 'isbn/delete_done.html')
 
 
 def update_isbn_info(request):
