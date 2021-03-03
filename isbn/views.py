@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from isbn.models import Book, SearchWord
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from isbn.models import Book, SearchWord
 from .forms import SearchWordForm
 from django.urls import reverse_lazy
 import subprocess
@@ -12,7 +12,7 @@ class BookListView(ListView):
     # データを渡すテンプレートファイルを指定
     template_name = 'isbn/isbn_list.html'
 
-    # 家計簿テーブルの全データを取得するメソッドを定義
+    # Bookテーブルの全データを取得するメソッドを定義
     def queryset(self):
         return Book.objects.all()
 
@@ -37,7 +37,7 @@ class WordListView(ListView):
     # データを渡すテンプレートファイルを指定
     template_name = 'isbn/searchword_list.html'
 
-    # 家計簿テーブルの全データを取得するメソッドを定義
+    # 検索ワードテーブルの全データを取得するメソッドを定義
     def queryset(self):
         return SearchWord.objects.all()
 
@@ -62,9 +62,8 @@ class WordDeleteView(DeleteView):
     # 削除処理が正常終了した場合の遷移先を指定
     success_url = reverse_lazy('isbn:delete_done')
 
-
-def delete_done(request):
-    return render(request, 'isbn/delete_done.html')
+    def delete_done(request):
+        return render(request, 'isbn/delete_done.html')
 
 
 def update_isbn_info(request):
