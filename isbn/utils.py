@@ -31,7 +31,7 @@ def create_url(word):
 
 
 def lineNotify(message):
-    line_notify_token = 'G1oID21zBsdrqamCPUrGyhtXMsFlSIF5esqEWWkvCIT'
+    line_notify_token = ''
     line_notify_api = 'https://notify-api.line.me/api/notify'
     payload = {'message': message}
     headers = {'Authorization': 'Bearer ' + line_notify_token}
